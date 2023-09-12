@@ -1,4 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://dmvnkjoqbqnd4"]
+[gd_scene load_steps=5 format=3 uid="uid://dmvnkjoqbqnd4"]
+
+[ext_resource type="Script" path="res://prog_93a.gd" id="1_fh7ia"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_egkbj"]
 font_size = 35
@@ -18,6 +20,7 @@ offset_top = 4.0
 offset_bottom = 4.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_fh7ia")
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 0
@@ -74,3 +77,6 @@ offset_right = 1133.0
 offset_bottom = 619.0
 theme = SubResource("Theme_bfybj")
 text = "Exit"
+
+[connection signal="pressed" from="btncalc" to="." method="_on_btncalc_pressed"]
+[connection signal="pressed" from="Button3" to="." method="_on_button_3_pressed"]

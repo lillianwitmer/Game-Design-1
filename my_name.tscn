@@ -1,0 +1,47 @@
+[gd_scene load_steps=3 format=3 uid="uid://cvurx53fxsnvg"]
+
+[ext_resource type="Script" path="res://my_name.gd" id="1_ai70s"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_fdf8y"]
+font_size = 80
+
+[node name="MyName" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 2.0
+offset_top = -6.0
+offset_right = 4.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ai70s")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 342.0
+offset_top = 72.0
+offset_right = 832.0
+offset_bottom = 293.0
+label_settings = SubResource("LabelSettings_fdf8y")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 372.0
+offset_top = 372.0
+offset_right = 776.0
+offset_bottom = 496.0
+text = "Click here"
+
+[node name="btnclear" type="Button" parent="."]
+layout_mode = 0
+offset_left = 372.0
+offset_top = 508.0
+offset_right = 776.0
+offset_bottom = 632.0
+text = "Clear"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="btnclear" to="." method="_on_btnclear_pressed"]

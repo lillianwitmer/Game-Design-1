@@ -1,0 +1,103 @@
+[gd_scene load_steps=5 format=3 uid="uid://c67jihnd27i7h"]
+
+[ext_resource type="Script" path="res://Prog_82a.gd" id="1_45hpf"]
+
+[sub_resource type="Theme" id="Theme_t4k3u"]
+
+[sub_resource type="Theme" id="Theme_qb5ce"]
+default_font_size = 30
+
+[sub_resource type="LabelSettings" id="LabelSettings_8nojs"]
+font_size = 35
+
+[node name="Prog_82a" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_45hpf")
+
+[node name="btnexit" type="Button" parent="."]
+modulate = Color(1, 0, 0.0156863, 1)
+layout_mode = 0
+offset_left = 966.0
+offset_top = 556.0
+offset_right = 1122.0
+offset_bottom = 624.0
+theme = SubResource("Theme_t4k3u")
+text = "Exit"
+
+[node name="btncalc" type="Button" parent="."]
+modulate = Color(0, 1, 0.215686, 1)
+layout_mode = 0
+offset_left = 143.0
+offset_top = 476.0
+offset_right = 366.0
+offset_bottom = 565.0
+theme = SubResource("Theme_qb5ce")
+text = "Calculate"
+
+[node name="btnclear" type="Button" parent="."]
+modulate = Color(0, 0.317647, 1, 1)
+layout_mode = 0
+offset_left = 404.0
+offset_top = 476.0
+offset_right = 627.0
+offset_bottom = 565.0
+theme = SubResource("Theme_qb5ce")
+text = "Clear"
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 26.0
+offset_top = 38.0
+offset_right = 374.0
+offset_bottom = 127.0
+text = "Enter Speed Limit:"
+label_settings = SubResource("LabelSettings_8nojs")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="lblout" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -59.0
+offset_right = 1056.0
+offset_bottom = 108.0
+grow_vertical = 2
+label_settings = SubResource("LabelSettings_8nojs")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 0
+offset_left = 26.0
+offset_top = 152.0
+offset_right = 374.0
+offset_bottom = 241.0
+text = "Enter Vehicle Speed:"
+label_settings = SubResource("LabelSettings_8nojs")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="txtlimit" type="LineEdit" parent="."]
+layout_mode = 0
+offset_left = 390.0
+offset_top = 36.0
+offset_right = 683.0
+offset_bottom = 127.0
+
+[node name="txtspeed" type="LineEdit" parent="."]
+layout_mode = 0
+offset_left = 390.0
+offset_top = 150.0
+offset_right = 683.0
+offset_bottom = 241.0
+
+[connection signal="pressed" from="btnexit" to="." method="_on_btnexit_pressed"]
+[connection signal="pressed" from="btncalc" to="." method="_on_btnclear_pressed"]
+[connection signal="pressed" from="btnclear" to="." method="_on_btncalc_pressed"]

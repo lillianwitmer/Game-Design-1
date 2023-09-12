@@ -1,0 +1,73 @@
+[gd_scene load_steps=3 format=3 uid="uid://ckq3vw6ok5d6y"]
+
+[ext_resource type="Script" path="res://Prog54c.gd" id="1_mcxdc"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_rmxqg"]
+font_size = 46
+
+[node name="Prog54c" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_mcxdc")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 22.0
+offset_top = 58.0
+offset_right = 282.0
+offset_bottom = 157.0
+text = "Radius:"
+label_settings = SubResource("LabelSettings_rmxqg")
+vertical_alignment = 1
+
+[node name="lbloutput" type="Label" parent="."]
+layout_mode = 0
+offset_left = 194.0
+offset_top = 207.0
+offset_right = 709.0
+offset_bottom = 451.0
+label_settings = SubResource("LabelSettings_rmxqg")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="txtrad" type="LineEdit" parent="."]
+layout_mode = 0
+offset_left = 296.0
+offset_top = 52.0
+offset_right = 669.0
+offset_bottom = 169.0
+
+[node name="btncalc" type="Button" parent="."]
+modulate = Color(0.0823529, 1, 0, 1)
+layout_mode = 0
+offset_left = 178.0
+offset_top = 526.0
+offset_right = 413.0
+offset_bottom = 628.0
+text = "Calculate"
+
+[node name="btnclear" type="Button" parent="."]
+modulate = Color(0.235294, 0, 1, 1)
+layout_mode = 0
+offset_left = 457.0
+offset_top = 524.0
+offset_right = 692.0
+offset_bottom = 626.0
+text = "Clear"
+
+[node name="btnexit" type="Button" parent="."]
+modulate = Color(1, 0, 0.0156863, 1)
+layout_mode = 0
+offset_left = 1012.0
+offset_top = 12.0
+offset_right = 1136.0
+offset_bottom = 78.0
+text = "Exit"
+
+[connection signal="pressed" from="btncalc" to="." method="_on_btncalc_pressed"]
+[connection signal="pressed" from="btnclear" to="." method="_on_btnclear_pressed"]
+[connection signal="pressed" from="btnexit" to="." method="_on_btnexit_pressed"]

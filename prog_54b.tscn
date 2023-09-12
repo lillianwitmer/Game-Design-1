@@ -1,0 +1,102 @@
+[gd_scene format=3 uid="uid://drbqsjpc43n5i"]
+
+[node name="Prog54b" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="txt4" type="LineEdit" parent="."]
+layout_mode = 0
+offset_left = 497.0
+offset_top = 286.0
+offset_right = 635.0
+offset_bottom = 332.0
+
+[node name="txt1" type="LineEdit" parent="."]
+layout_mode = 0
+offset_left = 500.0
+offset_top = 90.0
+offset_right = 638.0
+offset_bottom = 136.0
+
+[node name="txt2" type="LineEdit" parent="."]
+layout_mode = 0
+offset_left = 499.0
+offset_top = 151.0
+offset_right = 637.0
+offset_bottom = 197.0
+
+[node name="txt3" type="LineEdit" parent="."]
+layout_mode = 0
+offset_left = 498.0
+offset_top = 222.0
+offset_right = 636.0
+offset_bottom = 268.0
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 393.0
+offset_top = 100.0
+offset_right = 492.0
+offset_bottom = 126.0
+text = "number 1"
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 0
+offset_left = 399.0
+offset_top = 298.0
+offset_right = 498.0
+offset_bottom = 324.0
+text = "number 4"
+
+[node name="Label3" type="Label" parent="."]
+layout_mode = 0
+offset_left = 395.0
+offset_top = 161.0
+offset_right = 494.0
+offset_bottom = 187.0
+text = "number 2"
+
+[node name="Label4" type="Label" parent="."]
+layout_mode = 0
+offset_left = 397.0
+offset_top = 232.0
+offset_right = 496.0
+offset_bottom = 258.0
+text = "number 3"
+
+[node name="lblout" type="Label" parent="."]
+layout_mode = 0
+offset_left = 803.0
+offset_top = 74.0
+offset_right = 1042.0
+offset_bottom = 364.0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 286.0
+offset_top = 482.0
+offset_right = 468.0
+offset_bottom = 558.0
+text = "Calculate"
+
+[node name="Button2" type="Button" parent="."]
+layout_mode = 0
+offset_left = 504.0
+offset_top = 484.0
+offset_right = 686.0
+offset_bottom = 560.0
+text = "Clear"
+
+[node name="Button3" type="Button" parent="."]
+layout_mode = 0
+offset_left = 956.0
+offset_top = 484.0
+offset_right = 1126.0
+offset_bottom = 552.0
+text = "Exit"

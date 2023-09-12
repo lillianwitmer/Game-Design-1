@@ -1,0 +1,46 @@
+[gd_scene load_steps=3 format=3 uid="uid://1n3n6edpax4f"]
+
+[ext_resource type="Script" path="res://FavClub.gd" id="1_qxx8a"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_wsul6"]
+font_size = 40
+font_color = Color(0.172549, 0.682353, 0, 1)
+
+[node name="FavClub" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_qxx8a")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 372.0
+offset_top = 57.0
+offset_right = 795.0
+offset_bottom = 248.0
+label_settings = SubResource("LabelSettings_wsul6")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 321.0
+offset_top = 360.0
+offset_right = 518.0
+offset_bottom = 479.0
+text = "Show"
+
+[node name="btnclear" type="Button" parent="."]
+layout_mode = 0
+offset_left = 626.0
+offset_top = 358.0
+offset_right = 823.0
+offset_bottom = 477.0
+text = "Clear"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="btnclear" to="." method="_on_btnclear_pressed"]

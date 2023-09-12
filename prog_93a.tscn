@@ -1,0 +1,76 @@
+[gd_scene load_steps=4 format=3 uid="uid://dmvnkjoqbqnd4"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_egkbj"]
+font_size = 35
+
+[sub_resource type="LabelSettings" id="LabelSettings_kwksq"]
+font_size = 35
+
+[sub_resource type="Theme" id="Theme_bfybj"]
+default_font_size = 35
+
+[node name="Prog_93a" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 4.0
+offset_bottom = 4.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 27.0
+offset_top = 57.0
+offset_right = 309.0
+offset_bottom = 139.0
+text = "Kilowatts Used:"
+label_settings = SubResource("LabelSettings_egkbj")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="lblout" type="Label" parent="."]
+layout_mode = 0
+offset_left = 88.0
+offset_top = 184.0
+offset_right = 1079.0
+offset_bottom = 462.0
+label_settings = SubResource("LabelSettings_kwksq")
+
+[node name="txtwatts" type="LineEdit" parent="."]
+layout_mode = 0
+offset_left = 354.0
+offset_top = 58.0
+offset_right = 657.0
+offset_bottom = 147.0
+
+[node name="btncalc" type="Button" parent="."]
+modulate = Color(0.2, 1, 0, 1)
+layout_mode = 0
+offset_left = 119.0
+offset_top = 490.0
+offset_right = 343.0
+offset_bottom = 590.0
+theme = SubResource("Theme_bfybj")
+text = "Calculate"
+
+[node name="btnclear" type="Button" parent="."]
+modulate = Color(0, 0.635294, 1, 1)
+layout_mode = 0
+offset_left = 370.0
+offset_top = 489.0
+offset_right = 594.0
+offset_bottom = 589.0
+theme = SubResource("Theme_bfybj")
+text = "Clear"
+
+[node name="Button3" type="Button" parent="."]
+modulate = Color(1, 0, 0, 1)
+layout_mode = 0
+offset_left = 909.0
+offset_top = 519.0
+offset_right = 1133.0
+offset_bottom = 619.0
+theme = SubResource("Theme_bfybj")
+text = "Exit"

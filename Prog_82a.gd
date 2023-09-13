@@ -12,7 +12,7 @@ func _process(delta):
 
 
 func _on_btnexit_pressed():
-	get_tree().exit()
+	get_tree().quit()
 
 
 func _on_btncalc_pressed():

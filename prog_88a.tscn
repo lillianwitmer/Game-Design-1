@@ -1,0 +1,94 @@
+[gd_scene load_steps=4 format=3 uid="uid://c071g5fwf5mo4"]
+
+[ext_resource type="Script" path="res://prog88a.gd" id="1_wpgx7"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_qmbr5"]
+font_size = 35
+
+[sub_resource type="Theme" id="Theme_u1l2h"]
+default_font_size = 29
+
+[node name="prog88a" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_wpgx7")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 108.0
+offset_top = 98.0
+offset_right = 392.0
+offset_bottom = 169.0
+text = "Enter num 1:"
+label_settings = SubResource("LabelSettings_qmbr5")
+horizontal_alignment = 1
+
+[node name="txtnum1" type="LineEdit" parent="."]
+layout_mode = 0
+offset_left = 405.0
+offset_top = 90.0
+offset_right = 663.0
+offset_bottom = 167.0
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 0
+offset_left = 110.0
+offset_top = 205.0
+offset_right = 394.0
+offset_bottom = 276.0
+text = "Enter num 2:"
+label_settings = SubResource("LabelSettings_qmbr5")
+horizontal_alignment = 1
+
+[node name="lblout" type="Label" parent="."]
+layout_mode = 0
+offset_left = 108.0
+offset_top = 330.0
+offset_right = 891.0
+offset_bottom = 570.0
+label_settings = SubResource("LabelSettings_qmbr5")
+
+[node name="txtnum2" type="LineEdit" parent="."]
+layout_mode = 0
+offset_left = 407.0
+offset_top = 197.0
+offset_right = 665.0
+offset_bottom = 274.0
+
+[node name="btncalc" type="Button" parent="."]
+modulate = Color(0.298039, 1, 0, 1)
+layout_mode = 0
+offset_left = 861.0
+offset_top = 69.0
+offset_right = 1075.0
+offset_bottom = 165.0
+theme = SubResource("Theme_u1l2h")
+text = "Calculate"
+
+[node name="btnexit" type="Button" parent="."]
+modulate = Color(1, 0, 0.0156863, 1)
+layout_mode = 0
+offset_left = 960.0
+offset_top = 543.0
+offset_right = 1137.0
+offset_bottom = 623.0
+theme = SubResource("Theme_u1l2h")
+text = "Exit"
+
+[node name="btnclear" type="Button" parent="."]
+modulate = Color(0, 0.784314, 1, 1)
+layout_mode = 0
+offset_left = 860.0
+offset_top = 183.0
+offset_right = 1074.0
+offset_bottom = 279.0
+theme = SubResource("Theme_u1l2h")
+text = "Clear"
+
+[connection signal="pressed" from="btncalc" to="." method="_on_btncalc_pressed"]
+[connection signal="pressed" from="btnexit" to="." method="_on_btnexit_pressed"]
+[connection signal="pressed" from="btnclear" to="." method="_on_btnclear_pressed"]

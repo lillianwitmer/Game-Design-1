@@ -79,4 +79,5 @@ theme = SubResource("Theme_bfybj")
 text = "Exit"
 
 [connection signal="pressed" from="btncalc" to="." method="_on_btncalc_pressed"]
+[connection signal="pressed" from="btnclear" to="." method="_on_btnclear_pressed"]
 [connection signal="pressed" from="Button3" to="." method="_on_button_3_pressed"]

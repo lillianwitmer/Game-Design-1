@@ -1,4 +1,6 @@
-[gd_scene format=3 uid="uid://drbqsjpc43n5i"]
+[gd_scene load_steps=2 format=3 uid="uid://drbqsjpc43n5i"]
+
+[ext_resource type="Script" path="res://prog_54b.gd" id="1_y21j7"]
 
 [node name="Prog54b" type="Control"]
 layout_mode = 3
@@ -7,6 +9,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_y21j7")
 
 [node name="txt4" type="LineEdit" parent="."]
 layout_mode = 0
@@ -77,7 +80,7 @@ offset_bottom = 364.0
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Button" type="Button" parent="."]
+[node name="btnCalc" type="Button" parent="."]
 layout_mode = 0
 offset_left = 286.0
 offset_top = 482.0
@@ -85,7 +88,7 @@ offset_right = 468.0
 offset_bottom = 558.0
 text = "Calculate"
 
-[node name="Button2" type="Button" parent="."]
+[node name="btnClear" type="Button" parent="."]
 layout_mode = 0
 offset_left = 504.0
 offset_top = 484.0
@@ -93,10 +96,13 @@ offset_right = 686.0
 offset_bottom = 560.0
 text = "Clear"
 
-[node name="Button3" type="Button" parent="."]
+[node name="btnexit" type="Button" parent="."]
 layout_mode = 0
 offset_left = 956.0
 offset_top = 484.0
 offset_right = 1126.0
 offset_bottom = 552.0
 text = "Exit"
+
+[connection signal="pressed" from="btnCalc" to="." method="_on_btn_calc_pressed"]
+[connection signal="pressed" from="btnexit" to="." method="_on_btnexit_pressed"]

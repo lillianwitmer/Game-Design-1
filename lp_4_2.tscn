@@ -1,0 +1,124 @@
+[gd_scene load_steps=4 format=3 uid="uid://cu08wtutm3lm6"]
+
+[ext_resource type="Script" path="res://lp4-2.gd" id="1_p1gh0"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_u2vvs"]
+font_size = 35
+
+[sub_resource type="Theme" id="Theme_2bab5"]
+default_font_size = 29
+
+[node name="lp4-2" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_p1gh0")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 43.0
+offset_top = 23.0
+offset_right = 300.0
+offset_bottom = 122.0
+text = "Weight:"
+label_settings = SubResource("LabelSettings_u2vvs")
+vertical_alignment = 1
+
+[node name="Label3" type="Label" parent="."]
+layout_mode = 0
+offset_left = 534.0
+offset_top = 20.0
+offset_right = 791.0
+offset_bottom = 119.0
+text = "Height:"
+label_settings = SubResource("LabelSettings_u2vvs")
+vertical_alignment = 1
+
+[node name="Label5" type="Label" parent="."]
+layout_mode = 0
+offset_left = 45.0
+offset_top = 285.0
+offset_right = 1106.0
+offset_bottom = 497.0
+label_settings = SubResource("LabelSettings_u2vvs")
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 0
+offset_left = 38.0
+offset_top = 148.0
+offset_right = 295.0
+offset_bottom = 247.0
+text = "Length:"
+label_settings = SubResource("LabelSettings_u2vvs")
+vertical_alignment = 1
+
+[node name="Label4" type="Label" parent="."]
+layout_mode = 0
+offset_left = 529.0
+offset_top = 138.0
+offset_right = 786.0
+offset_bottom = 237.0
+text = "Width:"
+label_settings = SubResource("LabelSettings_u2vvs")
+vertical_alignment = 1
+
+[node name="txtweight" type="LineEdit" parent="."]
+layout_mode = 0
+offset_left = 201.0
+offset_top = 28.0
+offset_right = 484.0
+offset_bottom = 120.0
+
+[node name="txtwidth" type="LineEdit" parent="."]
+layout_mode = 0
+offset_left = 705.0
+offset_top = 144.0
+offset_right = 988.0
+offset_bottom = 236.0
+
+[node name="txtheight" type="LineEdit" parent="."]
+layout_mode = 0
+offset_left = 702.0
+offset_top = 15.0
+offset_right = 985.0
+offset_bottom = 107.0
+
+[node name="txtlength" type="LineEdit" parent="."]
+layout_mode = 0
+offset_left = 204.0
+offset_top = 157.0
+offset_right = 487.0
+offset_bottom = 249.0
+
+[node name="btncalc" type="Button" parent="."]
+modulate = Color(0.298039, 1, 0, 1)
+offset_left = 166.0
+offset_top = 528.0
+offset_right = 380.0
+offset_bottom = 624.0
+theme = SubResource("Theme_2bab5")
+text = "Calculate"
+
+[node name="btnexit" type="Button" parent="."]
+modulate = Color(1, 0, 0.0156863, 1)
+offset_left = 927.0
+offset_top = 538.0
+offset_right = 1141.0
+offset_bottom = 634.0
+theme = SubResource("Theme_2bab5")
+text = "Exit"
+
+[node name="btnclear" type="Button" parent="."]
+modulate = Color(0, 0.984314, 1, 1)
+offset_left = 453.0
+offset_top = 525.0
+offset_right = 667.0
+offset_bottom = 621.0
+theme = SubResource("Theme_2bab5")
+text = "Clear"
+
+[connection signal="pressed" from="btncalc" to="." method="_on_btncalc_pressed"]
+[connection signal="pressed" from="btnexit" to="." method="_on_btnexit_pressed"]

@@ -27,3 +27,11 @@ func _on_btncalc_pressed():
 		$lblout.text = "too large"
 	elif weight > 27 and size > 100000:
 		$lblout.text = "Too heavy and too big"
+
+
+func _on_btnclear_pressed():
+	$txtheight.text = ""
+	$txtlength.text = ""
+	$txtweight.text = ""
+	$txtwidth.text = ""
+	$lblout.text = ""

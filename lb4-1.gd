@@ -35,3 +35,8 @@ func _on_btncalc_pressed():
 	cost = price * copies 
 	$lblout.text = "Price per copy is $" + str(price) + "\nTotal cost is $%.2f" % cost
 	
+
+
+func _on_btnclear_pressed():
+	$txtcopies.text = ""
+	$lblout.text = ""

@@ -21,4 +21,16 @@ func _on_btnexit_pressed():
 func _on_btn_calc_pressed():
 	var num1 = int($txt1.text)
 	var num2 = int($txt2.text)
-	
+	var num3 = int($txt3.text)
+	var num4 = int($txt4.text)
+	var sum = num1 + num2 + num3 + num4
+	var average = num1 + num2 + num3 + num4 + sum /5
+	$lblout.text = "the sum of the four number is " + str(sum) + "\nthe average of the four numbers is " + str(average)
+
+
+func _on_btn_clear_pressed():
+	$lblout.text =""
+	$txt1.text = ""
+	$txt2.text = ""
+	$txt3.text = ""
+	$txt4.text = ""

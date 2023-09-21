@@ -1,0 +1,72 @@
+[gd_scene load_steps=3 format=3 uid="uid://vop2lflqff20"]
+
+[sub_resource type="Theme" id="Theme_3j8ca"]
+default_font_size = 29
+
+[sub_resource type="LabelSettings" id="LabelSettings_o3mii"]
+font_size = 35
+
+[node name="Lang54b" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="btncalc" type="Button" parent="."]
+modulate = Color(0.298039, 1, 0, 1)
+offset_left = 166.0
+offset_top = 528.0
+offset_right = 380.0
+offset_bottom = 624.0
+theme = SubResource("Theme_3j8ca")
+text = "Calculate"
+
+[node name="btnexit" type="Button" parent="."]
+modulate = Color(1, 0, 0.0156863, 1)
+offset_left = 927.0
+offset_top = 538.0
+offset_right = 1141.0
+offset_bottom = 634.0
+theme = SubResource("Theme_3j8ca")
+text = "Exit"
+
+[node name="btnclear" type="Button" parent="."]
+modulate = Color(0, 0.984314, 1, 1)
+offset_left = 453.0
+offset_top = 525.0
+offset_right = 667.0
+offset_bottom = 621.0
+theme = SubResource("Theme_3j8ca")
+text = "Clear"
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 115.0
+offset_top = 17.0
+offset_right = 465.0
+offset_bottom = 129.0
+text = "Choose 3 numbers"
+label_settings = SubResource("LabelSettings_o3mii")
+
+[node name="txtb" type="TextEdit" parent="."]
+layout_mode = 0
+offset_left = 449.0
+offset_top = 166.0
+offset_right = 767.0
+offset_bottom = 242.0
+
+[node name="TextEdit2" type="TextEdit" parent="."]
+layout_mode = 0
+offset_left = 102.0
+offset_top = 168.0
+offset_right = 420.0
+offset_bottom = 244.0
+
+[node name="TextEdit3" type="TextEdit" parent="."]
+layout_mode = 0
+offset_left = 786.0
+offset_top = 165.0
+offset_right = 1104.0
+offset_bottom = 241.0

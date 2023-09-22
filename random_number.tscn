@@ -27,6 +27,7 @@ label_settings = SubResource("LabelSettings_fl3cp")
 
 [node name="btncalc" type="Button" parent="."]
 modulate = Color(0.298039, 1, 0, 1)
+layout_mode = 0
 offset_left = 461.0
 offset_top = 481.0
 offset_right = 675.0

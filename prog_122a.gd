@@ -15,18 +15,16 @@ func _on_btnexit_pressed():
 	get_tree().quit()
 
 
-
 func _on_btncalc_pressed():
-	var a = int($txta.text)
-	var b = int($txtb.text) 
-	var c = int($txtc.text )
-	var proot = (-b + sqrt(b**2-4*a*c))/ 2*a
-	var nroot = (-b - sqrt(b**2-4*a*c))/ 2*a
-	$lblout.text = "Roots are %d and %d" % [proot, nroot]
+	$item.add_item("Number     Square     Square Root")
+	for num in range(1, 51):
+		var numsquared = num **2 
+		var numsqrt = sqrt(num)
+		var line = "%d     %d     %.4f" % [num, numsquared, numsqrt]
+		$item.add_item(line)
+
+
 
 
 func _on_btnclear_pressed():
-	$lblout.text = ""
-	$txta.text = ""
-	$txtb.text = ""
-	$txtc.text = ""
+	$item.clear()

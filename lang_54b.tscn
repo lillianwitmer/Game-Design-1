@@ -88,3 +88,4 @@ offset_bottom = 241.0
 
 [connection signal="pressed" from="btncalc" to="." method="_on_btncalc_pressed"]
 [connection signal="pressed" from="btnexit" to="." method="_on_btnexit_pressed"]
+[connection signal="pressed" from="btnclear" to="." method="_on_btnclear_pressed"]

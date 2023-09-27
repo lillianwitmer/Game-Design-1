@@ -25,7 +25,7 @@ func _on_btncalc_pressed():
 		var numsquared = num **2 
 		var numsqrt = sqrt(num)
 		var numcube = num**3 
-		var fourth = num
+		var fourth = num**0.25
 		var line = "%d     %d     %.4f     %d      %.4f" % [num, numsquared, numsqrt, numcube, fourth]
 		$item.add_item(line)
 	

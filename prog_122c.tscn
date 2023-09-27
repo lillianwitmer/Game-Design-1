@@ -15,6 +15,7 @@ grow_vertical = 2
 script = ExtResource("1_rmu8m")
 
 [node name="item" type="ItemList" parent="."]
+layout_mode = 0
 offset_left = 37.0
 offset_top = 4.0
 offset_right = 1121.0
@@ -22,6 +23,7 @@ offset_bottom = 441.0
 
 [node name="btncalc" type="Button" parent="."]
 modulate = Color(0.298039, 1, 0, 1)
+layout_mode = 0
 offset_left = 166.0
 offset_top = 528.0
 offset_right = 380.0
@@ -31,6 +33,7 @@ text = "Calculate"
 
 [node name="btnexit" type="Button" parent="."]
 modulate = Color(1, 0, 0.0156863, 1)
+layout_mode = 0
 offset_left = 927.0
 offset_top = 538.0
 offset_right = 1141.0
@@ -40,6 +43,7 @@ text = "Exit"
 
 [node name="btnclear" type="Button" parent="."]
 modulate = Color(0, 0.984314, 1, 1)
+layout_mode = 0
 offset_left = 453.0
 offset_top = 525.0
 offset_right = 667.0

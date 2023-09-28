@@ -1,21 +1,20 @@
-[gd_scene load_steps=3 format=3 uid="uid://b3imtdo4jpwrx"]
+[gd_scene load_steps=3 format=3 uid="uid://cyj70cltnlx4f"]
 
-[ext_resource type="Script" path="res://prog_122i.gd" id="1_ya57g"]
+[ext_resource type="Script" path="res://prog_152a.gd" id="1_0kyba"]
 
-[sub_resource type="Theme" id="Theme_fbco2"]
+[sub_resource type="Theme" id="Theme_udmvd"]
 default_font_size = 29
 
-[node name="prog_122i" type="Control"]
+[node name="prog_152a" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_ya57g")
+script = ExtResource("1_0kyba")
 
 [node name="list" type="ItemList" parent="."]
-layout_mode = 0
 offset_left = 37.0
 offset_top = 4.0
 offset_right = 1121.0
@@ -23,32 +22,29 @@ offset_bottom = 441.0
 
 [node name="btncalc" type="Button" parent="."]
 modulate = Color(0.298039, 1, 0, 1)
-layout_mode = 0
 offset_left = 166.0
 offset_top = 528.0
 offset_right = 380.0
 offset_bottom = 624.0
-theme = SubResource("Theme_fbco2")
+theme = SubResource("Theme_udmvd")
 text = "Calculate"
 
 [node name="btnexit" type="Button" parent="."]
 modulate = Color(1, 0, 0.0156863, 1)
-layout_mode = 0
 offset_left = 927.0
 offset_top = 538.0
 offset_right = 1141.0
 offset_bottom = 634.0
-theme = SubResource("Theme_fbco2")
+theme = SubResource("Theme_udmvd")
 text = "Exit"
 
 [node name="btnclear" type="Button" parent="."]
 modulate = Color(0, 0.984314, 1, 1)
-layout_mode = 0
 offset_left = 453.0
 offset_top = 525.0
 offset_right = 667.0
 offset_bottom = 621.0
-theme = SubResource("Theme_fbco2")
+theme = SubResource("Theme_udmvd")
 text = "Clear"
 
 [connection signal="pressed" from="btncalc" to="." method="_on_btncalc_pressed"]

@@ -1,0 +1,87 @@
+[gd_scene load_steps=3 format=3 uid="uid://dybcyswia3vci"]
+
+[ext_resource type="Script" path="res://prog_52_afunction.gd" id="1_o67lh"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_htjia"]
+font_size = 40
+font_color = Color(0.0509804, 1, 0, 1)
+
+[node name="Prog_52afunction" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_o67lh")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 159.0
+offset_top = 15.0
+offset_right = 377.0
+offset_bottom = 127.0
+text = "Length:"
+label_settings = SubResource("LabelSettings_htjia")
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="."]
+offset_left = 157.0
+offset_top = 161.0
+offset_right = 337.0
+offset_bottom = 280.0
+text = "Width:"
+label_settings = SubResource("LabelSettings_htjia")
+vertical_alignment = 1
+
+[node name="lblout" type="Label" parent="."]
+offset_left = 759.0
+offset_top = 30.0
+offset_right = 1124.0
+offset_bottom = 255.0
+label_settings = SubResource("LabelSettings_htjia")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="btncalc" type="Button" parent="."]
+modulate = Color(0.101961, 1, 0, 1)
+offset_left = 265.0
+offset_top = 367.0
+offset_right = 521.0
+offset_bottom = 466.0
+text = "Calculate"
+
+[node name="btnclear" type="Button" parent="."]
+modulate = Color(0, 0.4, 1, 1)
+offset_left = 265.0
+offset_top = 507.0
+offset_right = 521.0
+offset_bottom = 606.0
+text = "Clear"
+
+[node name="btnexit" type="Button" parent="."]
+modulate = Color(1, 0, 0, 1)
+offset_left = 941.0
+offset_top = 534.0
+offset_right = 1110.0
+offset_bottom = 614.0
+text = "Exit"
+
+[node name="txtlen" type="LineEdit" parent="."]
+layout_mode = 1
+anchors_preset = -1
+offset_left = 451.0
+offset_top = 25.0
+offset_right = 698.0
+offset_bottom = 114.0
+
+[node name="txtwid" type="LineEdit" parent="."]
+layout_mode = 1
+anchors_preset = -1
+offset_left = 456.0
+offset_top = 170.0
+offset_right = 705.0
+offset_bottom = 261.0
+
+[connection signal="pressed" from="btncalc" to="." method="_on_btncalc_pressed"]
+[connection signal="pressed" from="btnclear" to="." method="_on_btnclear_pressed"]
+[connection signal="pressed" from="btnexit" to="." method="_on_btnexit_pressed"]

@@ -1,18 +1,18 @@
-[gd_scene load_steps=3 format=3 uid="uid://cyj70cltnlx4f"]
+[gd_scene load_steps=3 format=3 uid="uid://dopskgncmjo1g"]
 
-[ext_resource type="Script" path="res://prog_152a.gd" id="1_0kyba"]
+[ext_resource type="Script" path="res://prog_152a.gd" id="1_q1pch"]
 
 [sub_resource type="Theme" id="Theme_udmvd"]
 default_font_size = 29
 
-[node name="prog_152a" type="Control"]
+[node name="prog_152amaybe" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_0kyba")
+script = ExtResource("1_q1pch")
 
 [node name="list" type="ItemList" parent="."]
 layout_mode = 0

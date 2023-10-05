@@ -50,6 +50,7 @@ offset_bottom = 465.0
 
 [node name="btnup" type="Button" parent="."]
 modulate = Color(0.298039, 1, 0, 1)
+layout_mode = 0
 offset_left = 60.0
 offset_top = 522.0
 offset_right = 274.0
@@ -59,6 +60,7 @@ text = "Update"
 
 [node name="btnre" type="Button" parent="."]
 modulate = Color(0, 0.984314, 1, 1)
+layout_mode = 0
 offset_left = 347.0
 offset_top = 525.0
 offset_right = 561.0
@@ -68,6 +70,7 @@ text = "Reset"
 
 [node name="btnexit" type="Button" parent="."]
 modulate = Color(1, 0, 0.0156863, 1)
+layout_mode = 0
 offset_left = 985.0
 offset_top = 546.0
 offset_right = 1141.0

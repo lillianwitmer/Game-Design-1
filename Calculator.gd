@@ -2,18 +2,24 @@ extends Control
 var num1 = int($num1.text)
 var num2 = int($num2.text)
 
-func add():
+func add(num1 , num2):
 	num1 + num2
-func min():
+	return num1 + num2
+func minus(num1 , num2):
 	num1-num2
-func mul():
+	return num1-num2
+func mul(num1 , num2):
 	num1*num2
-func div():
+	return
+func div(num1 , num2):
 	num1/num2
-func pow():
+	return
+func power(num1 , num2):
 	num1**num2
-func MOD():
-	
+	return
+func MOD(num1 , num2):
+	abs(num1)/abs(num2)
+	return
 
 func _ready():
 	pass # Replace with function body.

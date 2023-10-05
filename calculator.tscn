@@ -1,0 +1,166 @@
+[gd_scene load_steps=6 format=3 uid="uid://kmrpas7213jf"]
+
+[ext_resource type="Script" path="res://Calculator.gd" id="1_lot1u"]
+
+[sub_resource type="Theme" id="Theme_d42d2"]
+default_font_size = 29
+
+[sub_resource type="Theme" id="Theme_alkq2"]
+default_font_size = 29
+
+[sub_resource type="Theme" id="Theme_gmook"]
+default_font_size = 29
+
+[sub_resource type="LabelSettings" id="LabelSettings_pik6w"]
+font_size = 35
+
+[node name="Calculator" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_lot1u")
+
+[node name="num1" type="TextEdit" parent="."]
+layout_mode = 0
+offset_left = 48.0
+offset_top = 144.0
+offset_right = 311.0
+offset_bottom = 239.0
+
+[node name="num2" type="TextEdit" parent="."]
+layout_mode = 0
+offset_left = 416.0
+offset_top = 144.0
+offset_right = 679.0
+offset_bottom = 239.0
+
+[node name="MOD" type="Button" parent="."]
+modulate = Color(0.494118, 0.776471, 1, 1)
+layout_mode = 0
+offset_left = 984.0
+offset_top = 208.0
+offset_right = 1073.0
+offset_bottom = 285.0
+theme = SubResource("Theme_d42d2")
+text = "MOD"
+
+[node name="pow" type="Button" parent="."]
+modulate = Color(0.494118, 0.776471, 1, 1)
+layout_mode = 0
+offset_left = 864.0
+offset_top = 208.0
+offset_right = 953.0
+offset_bottom = 285.0
+theme = SubResource("Theme_d42d2")
+text = "**"
+
+[node name="div" type="Button" parent="."]
+modulate = Color(0.494118, 0.776471, 1, 1)
+layout_mode = 0
+offset_left = 744.0
+offset_top = 208.0
+offset_right = 833.0
+offset_bottom = 285.0
+theme = SubResource("Theme_d42d2")
+text = "/"
+
+[node name="mul" type="Button" parent="."]
+modulate = Color(0.494118, 0.776471, 1, 1)
+layout_mode = 0
+offset_left = 984.0
+offset_top = 112.0
+offset_right = 1073.0
+offset_bottom = 189.0
+theme = SubResource("Theme_d42d2")
+text = "*"
+
+[node name="min" type="Button" parent="."]
+modulate = Color(0.494118, 0.776471, 1, 1)
+layout_mode = 0
+offset_left = 864.0
+offset_top = 112.0
+offset_right = 953.0
+offset_bottom = 189.0
+theme = SubResource("Theme_d42d2")
+text = "-"
+
+[node name="add" type="Button" parent="."]
+modulate = Color(0.494118, 0.776471, 1, 1)
+layout_mode = 0
+offset_left = 745.0
+offset_top = 114.0
+offset_right = 834.0
+offset_bottom = 191.0
+theme = SubResource("Theme_d42d2")
+text = "+"
+
+[node name="btnclear" type="Button" parent="."]
+modulate = Color(0.298039, 1, 0, 1)
+layout_mode = 0
+offset_left = 325.0
+offset_top = 520.0
+offset_right = 539.0
+offset_bottom = 616.0
+theme = SubResource("Theme_alkq2")
+text = "Clear"
+
+[node name="btnexit7" type="Button" parent="."]
+modulate = Color(0, 0.984314, 1, 1)
+layout_mode = 0
+offset_left = 585.0
+offset_top = 521.0
+offset_right = 799.0
+offset_bottom = 617.0
+theme = SubResource("Theme_gmook")
+text = "Exit"
+
+[node name="lblout" type="Label" parent="."]
+layout_mode = 0
+offset_left = 132.0
+offset_top = 280.0
+offset_right = 626.0
+offset_bottom = 469.0
+label_settings = SubResource("LabelSettings_pik6w")
+
+[node name="l" type="Label" parent="."]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 62.0
+offset_right = 283.0
+offset_bottom = 123.0
+text = "Num 1"
+label_settings = SubResource("LabelSettings_pik6w")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="l2" type="Label" parent="."]
+layout_mode = 0
+offset_left = 409.0
+offset_top = 62.0
+offset_right = 684.0
+offset_bottom = 123.0
+text = "Num 2"
+label_settings = SubResource("LabelSettings_pik6w")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="l3" type="Label" parent="."]
+layout_mode = 0
+offset_left = 772.0
+offset_top = 30.0
+offset_right = 1047.0
+offset_bottom = 91.0
+text = "Operation"
+label_settings = SubResource("LabelSettings_pik6w")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="MOD" to="." method="_on_mod_pressed"]
+[connection signal="pressed" from="pow" to="." method="_on_pow_pressed"]
+[connection signal="pressed" from="div" to="." method="_on_div_pressed"]
+[connection signal="pressed" from="mul" to="." method="_on_mul_pressed"]
+[connection signal="pressed" from="min" to="." method="_on_min_pressed"]
+[connection signal="pressed" from="add" to="." method="_on_add_pressed"]

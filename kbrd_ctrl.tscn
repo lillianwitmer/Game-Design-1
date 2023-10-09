@@ -1,0 +1,58 @@
+[gd_scene load_steps=7 format=3 uid="uid://c6mkv31itba7b"]
+
+[ext_resource type="Script" path="res://kbrdplayer.gd" id="1_lt52d"]
+[ext_resource type="Script" path="res://kbrd_ctrl.gd" id="1_qw1yl"]
+[ext_resource type="Texture2D" uid="uid://dx7tmf0gfnx7s" path="res://icon.svg" id="2_8yqp3"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_8tnh0"]
+radius = 47.0
+height = 114.0
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_75onm"]
+a = Vector2(726, 12)
+b = Vector2(1, 10)
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_f3nql"]
+
+[node name="kbrd_ctrl" type="Node2D"]
+position = Vector2(8, -2)
+script = ExtResource("1_qw1yl")
+
+[node name="kbrdplayer" type="CharacterBody2D" parent="."]
+position = Vector2(245, 247)
+script = ExtResource("1_lt52d")
+
+[node name="Sprite2D" type="Sprite2D" parent="kbrdplayer"]
+position = Vector2(-180, -174.5)
+scale = Vector2(0.75, 0.929688)
+texture = ExtResource("2_8yqp3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="kbrdplayer"]
+position = Vector2(-181, -172)
+shape = SubResource("CapsuleShape2D_8tnh0")
+
+[node name="Camera2D" type="Camera2D" parent="kbrdplayer"]
+position = Vector2(-177, -168)
+zoom = Vector2(1.5, 1.5)
+
+[node name="startplatform" type="StaticBody2D" parent="."]
+position = Vector2(73, 296)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="startplatform"]
+position = Vector2(-63, -161)
+shape = SubResource("SegmentShape2D_75onm")
+
+[node name="Sprite2D" type="Sprite2D" parent="startplatform"]
+position = Vector2(301.5, -149)
+scale = Vector2(731, -6.5)
+texture = SubResource("PlaceholderTexture2D_f3nql")
+
+[node name="world" type="StaticBody2D" parent="."]
+position = Vector2(465, 303)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="world"]
+position = Vector2(414, 115)
+scale = Vector2(1.45568, 1.26526)
+polygon = PackedVector2Array(203.341, -168.345, 98, -14, 102.358, 34.7756, 135.552, 75.8914, 163.03, 157.298, -46.0266, 163.603, -594.91, 162.813, -51.5222, 137.522, -62.9809, 5.5499, -185.947, 15.8245, -246.62, -37.937, -320.812, -35.5659, -508.353, 71.9222, -329.742, -86.1486, -243.872, -90.8907, -242.498, -60.8573, -177.923, -3.95178, 8.24353, -19.7589, -120.219, -49.7923, -23.3568, -78.245, -167.619, -113.811, -0.686951, -95.6328, 16.7662, -95.2458, 65.9485, -184.943, 53.7125, -80.2301, 106, -105)
+
+[node name="Polygon2D" type="Polygon2D" parent="world"]

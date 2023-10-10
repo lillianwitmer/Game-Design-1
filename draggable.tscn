@@ -1,0 +1,25 @@
+[gd_scene load_steps=3 format=3 uid="uid://2w3l3xpoq8oi"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_b6ohk"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sxprc"]
+size = Vector2(94, 87)
+
+[node name="draggable" type="RigidBody2D"]
+position = Vector2(-2, -1)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(1059.81, 172.03)
+scale = Vector2(-91.6118, 84.0609)
+texture = SubResource("PlaceholderTexture2D_b6ohk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1060.39, 173.515)
+shape = SubResource("RectangleShape2D_sxprc")
+
+[node name="Button" type="Button" parent="."]
+offset_left = -47.0
+offset_top = -37.0
+offset_right = 43.0
+offset_bottom = 49.0
+focus_mode = 0

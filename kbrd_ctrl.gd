@@ -3,7 +3,7 @@ extends Node2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	$world/CollisionPolygon2D.polygon = $world/Polygon2D.polygon
+	$world/Polygon2D.polygon = $world/CollisionPolygon2D
 
 
 func _on_interact_mouse_entered():

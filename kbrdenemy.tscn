@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://dx7tmf0gfnx7s" path="res://icon.svg" id="2_risvi"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_puhb6"]
-size = Vector2(68, 68)
+size = Vector2(70, 71)
 
 [node name="kbrdenemy" type="RigidBody2D"]
 position = Vector2(839, 132)
@@ -18,7 +18,7 @@ scale = Vector2(0.539063, 0.539063)
 texture = ExtResource("2_risvi")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(3, 0)
+position = Vector2(2, -0.5)
 shape = SubResource("RectangleShape2D_puhb6")
 
 [node name="Timer" type="Timer" parent="."]

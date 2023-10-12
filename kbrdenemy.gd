@@ -16,6 +16,6 @@ func _on_timer_timeout():
 
 
 func _on_body_entered(body):
-	if body.name == "kdbplayer":
+	if body.name == "kbrdplayer":
 		body.queue_free() #delete player
 		OS.alert("YOURE DEAD, sucks.")

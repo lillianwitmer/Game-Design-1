@@ -1,0 +1,90 @@
+[gd_scene load_steps=10 format=3 uid="uid://c340a1o8g06kj"]
+
+[ext_resource type="Script" path="res://kbdPlatform.gd" id="1_72bfa"]
+[ext_resource type="PackedScene" uid="uid://bsi1k4roj70oa" path="res://kbrdenemy.tscn" id="2_qtnp0"]
+[ext_resource type="PackedScene" uid="uid://cdls2bvldbyh8" path="res://kbrdplayer.tscn" id="3_m2rbh"]
+[ext_resource type="PackedScene" uid="uid://b7qst3218qiw8" path="res://kbdexit.tscn" id="4_ep1qe"]
+[ext_resource type="Script" path="res://kbdexit.gd" id="5_l68r7"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_1mitq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uxyyk"]
+size = Vector2(320, 18)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v6u6v"]
+size = Vector2(321.5, 18)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6chy2"]
+size = Vector2(320.5, 18)
+
+[node name="kbdPlatform" type="Node2D"]
+script = ExtResource("1_72bfa")
+
+[node name="kbrdenemy" parent="." instance=ExtResource("2_qtnp0")]
+position = Vector2(2042, 256)
+
+[node name="kbrdenemy2" parent="." instance=ExtResource("2_qtnp0")]
+position = Vector2(842, 245)
+
+[node name="kbrdplayer" parent="." instance=ExtResource("3_m2rbh")]
+
+[node name="world" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="world"]
+polygon = PackedVector2Array(21, -1108, -1, 153, 162, 143, 160, 160, -1, 171, -4, 486, 6, 483, 9, 508, -4, 506, -1, 649, 256, 859, 382, 833, 432, 1085, 599, 1080, 679, 1408, 805, 1403, 871, 1650, 1012, 1695, 1118, 1675, 1123, 1504, 1425, 1514, 1264, 1287, 1380, 1292, 1279, 949, 1440, 914, 1340, 657, 1476, 637, 1425, 425, 2080, 619, 2385, 617, 2385, 282, 2420, 11, 2480, 667, 2272, 1181, 1894, 1599, 1103, 2028, 488, 1579, -1, 674, -64, 664)
+
+[node name="Polygon2D" type="Polygon2D" parent="world/CollisionPolygon2D"]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(763, 436)
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
+position = Vector2(-507, -195)
+scale = Vector2(321.25, 18.25)
+texture = SubResource("PlaceholderTexture2D_1mitq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-507, -195)
+shape = SubResource("RectangleShape2D_uxyyk")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+position = Vector2(763, 436)
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D2"]
+position = Vector2(85, -107)
+scale = Vector2(321.25, 18.25)
+texture = SubResource("PlaceholderTexture2D_1mitq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
+position = Vector2(85.25, -107)
+shape = SubResource("RectangleShape2D_v6u6v")
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="."]
+position = Vector2(763, 436)
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D3"]
+self_modulate = Color(0.298039, 0, 1, 1)
+position = Vector2(-442, 79)
+scale = Vector2(321.25, 18.25)
+texture = SubResource("PlaceholderTexture2D_1mitq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3"]
+position = Vector2(-442.25, 79)
+shape = SubResource("RectangleShape2D_6chy2")
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="."]
+position = Vector2(763, 436)
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D4"]
+position = Vector2(661, -209)
+scale = Vector2(321.25, 18.25)
+texture = SubResource("PlaceholderTexture2D_1mitq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D4"]
+position = Vector2(660, -209)
+shape = SubResource("RectangleShape2D_6chy2")
+
+[node name="kbdexit" parent="." instance=ExtResource("4_ep1qe")]
+script = ExtResource("5_l68r7")
+
+[connection signal="body_entered" from="kbdexit" to="kbdexit" method="_on_body_entered"]

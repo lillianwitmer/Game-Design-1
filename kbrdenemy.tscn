@@ -1,10 +1,10 @@
 [gd_scene load_steps=4 format=3 uid="uid://bsi1k4roj70oa"]
 
 [ext_resource type="Script" path="res://kbrdenemy.gd" id="1_5h3rt"]
-[ext_resource type="Texture2D" uid="uid://dx7tmf0gfnx7s" path="res://icon.svg" id="2_risvi"]
+[ext_resource type="Texture2D" uid="uid://l5oqh07l6bur" path="res://assets/rpgcritters2.png" id="2_d8agk"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_puhb6"]
-size = Vector2(70, 71)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_h14f5"]
+radius = 15.0
 
 [node name="kbrdenemy" type="RigidBody2D"]
 position = Vector2(839, 132)
@@ -13,13 +13,16 @@ contact_monitor = true
 script = ExtResource("1_5h3rt")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(3, 0)
-scale = Vector2(0.539063, 0.539063)
-texture = ExtResource("2_risvi")
+position = Vector2(13.6094, 5.99999)
+scale = Vector2(1.52441, 1.43478)
+texture = ExtResource("2_d8agk")
+hframes = 3
+vframes = 5
+frame = 14
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(2, -0.5)
-shape = SubResource("RectangleShape2D_puhb6")
+position = Vector2(6, 8)
+shape = SubResource("CapsuleShape2D_h14f5")
 
 [node name="Timer" type="Timer" parent="."]
 

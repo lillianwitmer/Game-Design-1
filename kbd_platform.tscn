@@ -20,18 +20,11 @@ size = Vector2(320.5, 18)
 [node name="kbdPlatform" type="Node2D"]
 script = ExtResource("1_72bfa")
 
-[node name="kbrdenemy" parent="." instance=ExtResource("2_qtnp0")]
-position = Vector2(2042, 256)
-
-[node name="kbrdenemy2" parent="." instance=ExtResource("2_qtnp0")]
-position = Vector2(842, 245)
-
-[node name="kbrdplayer" parent="." instance=ExtResource("3_m2rbh")]
-
 [node name="world" type="StaticBody2D" parent="."]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="world"]
-polygon = PackedVector2Array(21, -1108, -1, 153, 162, 143, 160, 160, -1, 171, -4, 486, 6, 483, 9, 508, -4, 506, -1, 649, 256, 859, 382, 833, 432, 1085, 599, 1080, 679, 1408, 805, 1403, 871, 1650, 1012, 1695, 1118, 1675, 1123, 1504, 1425, 1514, 1264, 1287, 1380, 1292, 1279, 949, 1440, 914, 1340, 657, 1476, 637, 1425, 425, 2080, 619, 2385, 617, 2385, 282, 2420, 11, 2480, 667, 2272, 1181, 1894, 1599, 1103, 2028, 488, 1579, -1, 674, -64, 664)
+position = Vector2(11, 32)
+polygon = PackedVector2Array(21, -1108, -1, 153, 162, 143, 160, 160, -1, 171, -4, 486, 6, 483, 9, 508, -4, 506, -1, 649, 256, 859, 382, 833, 432, 1085, 599, 1080, 679, 1408, 805, 1403, 1033, 1447, 1012, 1695, 1118, 1675, 1807, 1932, 2221.86, 1820.13, 3067, 1382, 2933, 966, 3168, 1318, 3136, 923, 3262.75, 1206.76, 3325, 1205, 3328, 969, 3408, 865, 3665, 950, 3734, 608, 3579, 293, 3248, 731, 2725, 694, 2661.73, 786.252, 2815, 888, 2522, 990, 2642, 1175, 2794, 1223, 2458, 1350, 2653.89, 1459.34, 1924, 1596, 1241, 1516, 1264, 1287, 1380, 1292, 1279, 949, 1440, 914, 1340, 657, 1476, 637, 1425, 425, 2080, 619, 2385, 617, 2385, 282, 2420, 11, 3355, 213, 3985, 357, 3692, 1922, 2384, 2023, 1103, 2028, 488, 1579, -1, 674, -64, 664)
 
 [node name="Polygon2D" type="Polygon2D" parent="world/CollisionPolygon2D"]
 
@@ -64,27 +57,42 @@ position = Vector2(763, 436)
 
 [node name="Sprite2D" type="Sprite2D" parent="StaticBody2D3"]
 self_modulate = Color(0.298039, 0, 1, 1)
-position = Vector2(-442, 79)
+position = Vector2(-394.375, 159.125)
 scale = Vector2(321.25, 18.25)
 texture = SubResource("PlaceholderTexture2D_1mitq")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3"]
-position = Vector2(-442.25, 79)
+position = Vector2(-394.625, 159.125)
 shape = SubResource("RectangleShape2D_6chy2")
 
 [node name="StaticBody2D4" type="StaticBody2D" parent="."]
 position = Vector2(763, 436)
 
 [node name="Sprite2D" type="Sprite2D" parent="StaticBody2D4"]
-position = Vector2(661, -209)
+position = Vector2(138.625, 335.125)
 scale = Vector2(321.25, 18.25)
 texture = SubResource("PlaceholderTexture2D_1mitq")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D4"]
-position = Vector2(660, -209)
+position = Vector2(137.625, 335.125)
 shape = SubResource("RectangleShape2D_6chy2")
 
 [node name="kbdexit" parent="." instance=ExtResource("4_ep1qe")]
+position = Vector2(1297, 320)
 script = ExtResource("5_l68r7")
+
+[node name="kbrdplayer" parent="." instance=ExtResource("3_m2rbh")]
+
+[node name="kbrdenemy" parent="." instance=ExtResource("2_qtnp0")]
+position = Vector2(272, 160)
+
+[node name="kbrdenemy2" parent="." instance=ExtResource("2_qtnp0")]
+position = Vector2(340, 512)
+
+[node name="kbrdenemy3" parent="." instance=ExtResource("2_qtnp0")]
+position = Vector2(1517, 1768)
+
+[node name="kbrdenemy4" parent="." instance=ExtResource("2_qtnp0")]
+position = Vector2(2674, 1165)
 
 [connection signal="body_entered" from="kbdexit" to="kbdexit" method="_on_body_entered"]

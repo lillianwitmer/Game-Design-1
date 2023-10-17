@@ -84,15 +84,18 @@ script = ExtResource("5_l68r7")
 [node name="kbrdplayer" parent="." instance=ExtResource("3_m2rbh")]
 
 [node name="kbrdenemy" parent="." instance=ExtResource("2_qtnp0")]
-position = Vector2(272, 160)
+position = Vector2(325, 145)
 
 [node name="kbrdenemy2" parent="." instance=ExtResource("2_qtnp0")]
-position = Vector2(340, 512)
+position = Vector2(810, 1306)
 
 [node name="kbrdenemy3" parent="." instance=ExtResource("2_qtnp0")]
-position = Vector2(1517, 1768)
+position = Vector2(896, 650)
 
 [node name="kbrdenemy4" parent="." instance=ExtResource("2_qtnp0")]
-position = Vector2(2674, 1165)
+position = Vector2(1652, 1749)
+
+[node name="kbrdenemy5" parent="." instance=ExtResource("2_qtnp0")]
+position = Vector2(2703, 1140)
 
 [connection signal="body_entered" from="kbdexit" to="kbdexit" method="_on_body_entered"]

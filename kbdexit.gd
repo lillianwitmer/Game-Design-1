@@ -10,7 +10,12 @@ func _ready():
 func _process(delta):
 	pass
 
+@export var next_level = ""
 
 func _on_body_entered(body):
 	if body.name == "kbrdplayer":
 		OS.alert("You Win!")
+		var level = "res://" + next_level + ".tscn" 
+		get_tree().change_scene_to_file(level)
+		
+	

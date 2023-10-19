@@ -80,6 +80,7 @@ shape = SubResource("RectangleShape2D_6chy2")
 [node name="kbdexit" parent="." instance=ExtResource("4_ep1qe")]
 position = Vector2(1297, 320)
 script = ExtResource("5_l68r7")
+next_level = "kbd_world_2"
 
 [node name="kbrdplayer" parent="." instance=ExtResource("3_m2rbh")]
 

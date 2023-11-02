@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://dx4fa6kfylkrq"]
+[gd_scene load_steps=8 format=3 uid="uid://dx4fa6kfylkrq"]
 
 [ext_resource type="Script" path="res://idk.gd" id="1_3o3t2"]
 [ext_resource type="PackedScene" uid="uid://ximx7nwtn2l5" path="res://phys_ball.tscn" id="2_6iwn8"]
@@ -10,8 +10,12 @@
 size = Vector2(1151, 46.5)
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_j58w8"]
+friction = 0.0
 rough = true
 absorbent = true
+
+[sub_resource type="LabelSettings" id="LabelSettings_wcv5w"]
+font_size = 39
 
 [node name="idk" type="Node2D"]
 script = ExtResource("1_3o3t2")
@@ -33,12 +37,14 @@ position = Vector2(192, 384)
 [node name="box" parent="." instance=ExtResource("3_3av6x")]
 position = Vector2(885, 550)
 physics_material_override = SubResource("PhysicsMaterial_j58w8")
+custom_integrator = true
 
 [node name="box3" parent="." instance=ExtResource("3_3av6x")]
 position = Vector2(1037, 550)
 
 [node name="box4" parent="." instance=ExtResource("3_3av6x")]
 position = Vector2(925, 482)
+gravity_scale = 0.0
 
 [node name="box5" parent="." instance=ExtResource("3_3av6x")]
 position = Vector2(1003, 482)
@@ -48,3 +54,37 @@ position = Vector2(969, 414)
 
 [node name="box2" parent="." instance=ExtResource("3_3av6x")]
 position = Vector2(961, 550)
+
+[node name="Panel" type="Panel" parent="."]
+offset_left = 46.0
+offset_top = 44.0
+offset_right = 452.0
+offset_bottom = 236.0
+
+[node name="Label" type="Label" parent="Panel"]
+layout_mode = 0
+offset_right = 128.0
+offset_bottom = 59.0
+text = "Force:"
+label_settings = SubResource("LabelSettings_wcv5w")
+
+[node name="slider" type="HSlider" parent="Panel"]
+layout_mode = 0
+offset_left = 28.0
+offset_top = 41.0
+offset_right = 364.0
+offset_bottom = 98.0
+
+[node name="Button" type="Button" parent="Panel"]
+layout_mode = 0
+offset_left = 86.0
+offset_top = 107.0
+offset_right = 295.0
+offset_bottom = 170.0
+text = "apply"
+
+[connection signal="input_event" from="phys_ball" to="." method="_on_phys_ball_input_event"]
+[connection signal="sleeping_state_changed" from="box6" to="." method="_on_box_6_sleeping_state_changed"]
+[connection signal="input_event" from="box2" to="." method="_on_box_2_input_event"]
+[connection signal="value_changed" from="Panel/slider" to="." method="_on_h_slider_value_changed"]
+[connection signal="pressed" from="Panel/Button" to="." method="_on_button_pressed"]

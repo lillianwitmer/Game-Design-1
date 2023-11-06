@@ -1,0 +1,56 @@
+[gd_scene load_steps=3 format=3 uid="uid://by6f7fkpjtcm3"]
+
+[ext_resource type="Script" path="res://my_gui.gd" id="1_0twuw"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_nbqoq"]
+
+[node name="my_gui" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_0twuw")
+
+[node name="Panel" type="Panel" parent="."]
+material = SubResource("CanvasItemMaterial_nbqoq")
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -577.0
+offset_top = -324.5
+offset_right = 577.0
+offset_bottom = 324.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="resume" type="Button" parent="Panel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -191.0
+offset_top = 221.0
+offset_right = 164.0
+offset_bottom = 320.0
+grow_horizontal = 2
+text = "Resume"
+
+[node name="quit" type="Button" parent="Panel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -189.0
+offset_top = 372.0
+offset_right = 166.0
+offset_bottom = 471.0
+grow_horizontal = 2
+text = "Quit"
+
+[connection signal="pressed" from="Panel/resume" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="Panel/quit" to="." method="_on_quit_pressed"]

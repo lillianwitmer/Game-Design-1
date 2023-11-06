@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://dcws64cxcio25"]
+
+[ext_resource type="Script" path="res://TDplayer.gd" id="1_jlcqs"]
+[ext_resource type="Texture2D" uid="uid://l5oqh07l6bur" path="res://assets/rpgcritters2.png" id="2_qghls"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_pvb50"]
+radius = 19.0
+height = 40.0
+
+[node name="topdown" type="Node2D"]
+
+[node name="TDplayer" type="CharacterBody2D" parent="."]
+script = ExtResource("1_jlcqs")
+
+[node name="Sprite2D" type="Sprite2D" parent="TDplayer"]
+scale = Vector2(1.45833, 1.43478)
+texture = ExtResource("2_qghls")
+hframes = 2
+vframes = 5
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TDplayer"]
+position = Vector2(7, 4)
+shape = SubResource("CapsuleShape2D_pvb50")

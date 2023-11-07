@@ -52,5 +52,10 @@ offset_bottom = 471.0
 grow_horizontal = 2
 text = "Quit"
 
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
+layout_mode = 0
+offset_right = 1153.0
+offset_bottom = 646.0
+
 [connection signal="pressed" from="Panel/resume" to="." method="_on_resume_pressed"]
 [connection signal="pressed" from="Panel/quit" to="." method="_on_quit_pressed"]

@@ -36,18 +36,25 @@ func _physics_process(delta):
 		
 func update_animation(direction):
 	var a_name = "default"
-	if direction.length > 0:
+	if direction.length() > 0:
 		look_direction = direction
 		a_name = "walk"
 		if direction.x != 0:
 			a_name+="side"
-			AnimatedSprite2D.flip_h = direction.x < 0
+			$AnimatedSprite2D.flip_h = direction.x < 0
 		elif direction.y < 0 : 
 			a_name += "up"
 		elif direction.y > 0 :
 			a_name+="walk"
+		$AnimatedSprite2D.play()
 	else : 
-		pass
+		if look_direction.x != 0 :
+			a_name = "default side"
+			$AnimatedSprite2D.flip_h= look_direction.x < 0 
+		elif look_direction.y < 0 :
+			a_name = "default up"
+		elif look_direction.y > 0:
+			a_name = "default"
 		
 	if $AnimatedSprite2D.animation != a_name:
 		$AnimatedSprite2D.animation = a_name

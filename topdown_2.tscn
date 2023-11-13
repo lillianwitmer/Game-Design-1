@@ -1,0 +1,15 @@
+[gd_scene load_steps=5 format=3 uid="uid://cge12p2n1emkk"]
+
+[ext_resource type="Script" path="res://Topdown2.gd" id="1_us1op"]
+[ext_resource type="PackedScene" uid="uid://cnqgu4sx27mpe" path="res://t_dplayer.tscn" id="2_wtq07"]
+[ext_resource type="PackedScene" uid="uid://bm6cbyghser65" path="res://player_hud.tscn" id="3_bdlo8"]
+[ext_resource type="PackedScene" uid="uid://bobvw2rqma01h" path="res://change_lvl.tscn" id="4_kiru2"]
+
+[node name="Topdown2" type="Node2D"]
+script = ExtResource("1_us1op")
+
+[node name="TDplayer" parent="." instance=ExtResource("2_wtq07")]
+
+[node name="playerHUD" parent="." instance=ExtResource("3_bdlo8")]
+
+[node name="change_lvl" parent="." instance=ExtResource("4_kiru2")]

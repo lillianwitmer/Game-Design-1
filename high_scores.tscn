@@ -1,0 +1,68 @@
+[gd_scene load_steps=4 format=3 uid="uid://dmg1afh8s2h27"]
+
+[ext_resource type="Script" path="res://HighScores.gd" id="1_86464"]
+
+[sub_resource type="Theme" id="Theme_ukquv"]
+default_font_size = 30
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_b4x2s"]
+
+[node name="HighScores" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_86464")
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 36.0
+offset_top = -126.0
+offset_right = 344.0
+offset_bottom = -29.0
+grow_vertical = 0
+theme = SubResource("Theme_ukquv")
+text = "Add score"
+icon = SubResource("ViewportTexture_b4x2s")
+
+[node name="Button2" type="Button" parent="."]
+layout_mode = 0
+offset_left = 794.0
+offset_top = 521.0
+offset_right = 1102.0
+offset_bottom = 618.0
+theme = SubResource("Theme_ukquv")
+text = "Remove score #"
+icon = SubResource("ViewportTexture_b4x2s")
+
+[node name="LineEdit" type="LineEdit" parent="."]
+layout_mode = 0
+offset_left = 45.0
+offset_top = 419.0
+offset_right = 333.0
+offset_bottom = 506.0
+
+[node name="LineEdit2" type="LineEdit" parent="."]
+layout_mode = 0
+offset_left = 797.0
+offset_top = 408.0
+offset_right = 1085.0
+offset_bottom = 495.0
+
+[node name="ItemList" type="ItemList" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -205.0
+offset_right = 206.0
+offset_bottom = 624.0
+grow_horizontal = 2
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]

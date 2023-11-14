@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://dcws64cxcio25"]
+[gd_scene load_steps=9 format=3 uid="uid://dcws64cxcio25"]
 
 [ext_resource type="PackedScene" uid="uid://cnqgu4sx27mpe" path="res://t_dplayer.tscn" id="1_2bulx"]
 [ext_resource type="Texture2D" uid="uid://cr5xrltuelatd" path="res://assets/Overworld.png" id="3_qeqsh"]
 [ext_resource type="Script" path="res://changelvl.gd" id="4_3ip2j"]
 [ext_resource type="PackedScene" uid="uid://bm6cbyghser65" path="res://player_hud.tscn" id="4_5k7ul"]
+[ext_resource type="PackedScene" uid="uid://co3xx0lo84luj" path="res://Entites/coin.tscn" id="5_dl71y"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_15pid"]
 texture = ExtResource("3_qeqsh")
@@ -3138,6 +3139,9 @@ texture = ExtResource("3_qeqsh")
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_15pid")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_owv88"]
+size = Vector2(116.5, 44)
+
 [node name="topdown" type="Node2D"]
 
 [node name="TDplayer" parent="." instance=ExtResource("1_2bulx")]
@@ -3165,5 +3169,16 @@ layer_0/tile_data = PackedInt32Array(131072, 458752, 9, 196608, 458752, 10, 1310
 script = ExtResource("4_3ip2j")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="changelvl"]
+position = Vector2(372.25, 22)
+shape = SubResource("RectangleShape2D_owv88")
+
+[node name="Coin" parent="." instance=ExtResource("5_dl71y")]
+position = Vector2(228, 104)
+
+[node name="Coin2" parent="." instance=ExtResource("5_dl71y")]
+position = Vector2(292, 22)
+
+[node name="Coin3" parent="." instance=ExtResource("5_dl71y")]
+position = Vector2(103, 29)
 
 [connection signal="body_entered" from="changelvl" to="changelvl" method="_on_body_entered"]

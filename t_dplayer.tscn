@@ -174,7 +174,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_kicde")
 }],
 "loop": true,
-"name": &"walk_",
+"name": &"walk_side",
 "speed": 5.0
 }]
 
@@ -190,7 +190,7 @@ z_index = 1
 position = Vector2(1, -1.19209e-07)
 scale = Vector2(1.6875, 1.59375)
 sprite_frames = SubResource("SpriteFrames_heitc")
-animation = &"walk_"
+animation = &"down"
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(5, 5)

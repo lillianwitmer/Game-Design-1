@@ -53,7 +53,7 @@ func update_animation(direction):
 	var a_name = "idle_down"  # Default
 	if direction.length() > 0:
 		look_direction = direction
-		a_name = "walk_side"
+		a_name = "walk_"
 		if direction.x != 0:
 			a_name += "side"
 			$AnimatedSprite2D.flip_h = direction.x < 0

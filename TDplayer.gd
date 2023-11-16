@@ -21,6 +21,9 @@ var menu_instance = null
 
 func pickup_money(value):
 	data.money += value
+	
+func pickup_heart(value):
+	data.health += value
 
 func _ready():
 	p_HUD.show()

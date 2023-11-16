@@ -13,6 +13,7 @@ func create_heart():
 	n_heart.vframes = hearts.vframes
 	n_heart.frame = 8
 	hearts.add_child(n_heart)
+	
 
 func draw_hearts():
 	for heart in hearts.get_children():

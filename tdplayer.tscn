@@ -148,6 +148,7 @@ animations = [{
 [node name="TDplayer" type="CharacterBody2D" groups=["Player"]]
 z_index = 1
 script = ExtResource("1_ai18i")
+data = null
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_4wur7")

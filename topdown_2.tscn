@@ -9,6 +9,7 @@
 script = ExtResource("1_us1op")
 
 [node name="TDplayer" parent="." instance=ExtResource("2_wtq07")]
+data = null
 
 [node name="playerHUD" parent="." instance=ExtResource("3_bdlo8")]
 

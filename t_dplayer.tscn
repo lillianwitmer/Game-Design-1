@@ -158,6 +158,11 @@ animations = [{
 "name": &"side",
 "speed": 5.0
 }, {
+"frames": [],
+"loop": true,
+"name": &"slash",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_l72ix")
@@ -212,6 +217,7 @@ animations = [{
 
 [node name="TDplayer" type="CharacterBody2D" groups=["player"]]
 script = ExtResource("1_g44u3")
+data = null
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(2, 11)
@@ -222,7 +228,7 @@ z_index = 1
 position = Vector2(1, -1.19209e-07)
 scale = Vector2(1.6875, 1.59375)
 sprite_frames = SubResource("SpriteFrames_heitc")
-animation = &"walk_side"
+animation = &"slash"
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(5, 5)

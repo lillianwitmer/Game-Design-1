@@ -9,13 +9,6 @@
 script = ExtResource("1_us1op")
 
 [node name="TDplayer" parent="." instance=ExtResource("2_wtq07")]
-data = {
-"health": 60.0,
-"max_health": 60.0,
-"money": 0,
-"secondaries": [],
-"state": 0
-}
 
 [node name="playerHUD" parent="." instance=ExtResource("3_bdlo8")]
 

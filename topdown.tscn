@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://dcws64cxcio25"]
+[gd_scene load_steps=12 format=3 uid="uid://dcws64cxcio25"]
 
 [ext_resource type="PackedScene" uid="uid://cnqgu4sx27mpe" path="res://t_dplayer.tscn" id="1_2bulx"]
 [ext_resource type="Script" path="res://TDplayer (1).gd" id="2_e2unm"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://bm6cbyghser65" path="res://player_hud.tscn" id="4_5k7ul"]
 [ext_resource type="PackedScene" uid="uid://co3xx0lo84luj" path="res://Entites/coin.tscn" id="5_dl71y"]
 [ext_resource type="PackedScene" uid="uid://dm05ith3p7du" path="res://miniheart.tscn" id="7_7oe8u"]
+[ext_resource type="PackedScene" uid="uid://gduu78hkcn6x" path="res://t_denemy.tscn" id="8_64trc"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_15pid"]
 texture = ExtResource("3_qeqsh")
@@ -3193,5 +3194,11 @@ position = Vector2(30, 66)
 
 [node name="miniheart3" parent="." instance=ExtResource("7_7oe8u")]
 position = Vector2(169, 70)
+
+[node name="TDenemy" parent="." instance=ExtResource("8_64trc")]
+position = Vector2(-57, 85)
+
+[node name="TDenemy2" parent="." instance=ExtResource("8_64trc")]
+position = Vector2(-81, 35)
 
 [connection signal="body_entered" from="changelvl" to="changelvl" method="_on_body_entered"]

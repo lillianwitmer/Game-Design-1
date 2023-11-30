@@ -30,7 +30,7 @@ var menu_instance = null
 @onready var p_HUD = get_tree().get_first_node_in_group("HUD")
 
 func get_direction_name():
-	return["right", "down", "left", "up"][
+	return["left", "right", "down", "up"][
 		int(round(look_direction.angle()*2 / PI)) % 4
 	]
 
@@ -76,6 +76,9 @@ func _ready():
 	menu_instance = menu_scene.instantiate()
 	get_tree().get_root().add_child.call_deferred(menu_instance)
 	menu_instance.hide()
+	
+func take_damage(dmg):
+	pass
 
 func _physics_process(delta):
 	animation_lock = max( animation_lock-delta, 0.0 )

@@ -49,9 +49,26 @@ func turn_toward_player_location(location: Vector2):
 			closest_angle = angle_diff
 			closest_state = STATES.values()[i]
 	AI_STATE = closest_state
-	
+
+
 func take_damage(dmg, attacker=null):
+	if damage_lock == 0.0:
+		AI_STATE = STATES.DAMAGED
+		HEALTH -= dmg 
+		damage_lock = 0.2
+		animation_lock = 0.2
+		# to do: damage intensity & shader
+		if HEALTH <= 0:
+			# to do: drop item and play sound 
+			queue_free()
+		else:
+			if attacker != null:
+				var location = attacker.global_position
+				await recovered
+				turn_toward_player_location(location)
+		
 	pass
+
 
 func _physics_process(delta):
 	animation_lock = max(animation_lock - delta, 0.0)

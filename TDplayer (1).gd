@@ -26,6 +26,7 @@ var charge_start_time = 0.0
 var slash_scene = preload("res://Entites/attacks/slash.tscn")
 var menu_scene = preload("res://my_gui.tscn")
 var attack_sound = preload("res://sounds/slash.wav")
+var damage_shader = preload("res://assets/Shaders/take_damage.tres")
 var menu_instance = null
 
 @onready var aud_player = $AudioStreamPlayer2D
@@ -38,8 +39,10 @@ func get_direction_name():
 
 func attack():
 	data.state = STATES.ATTACKING
+	if get_direction_name() == "left":
+		$AnimatedSprite2D.flip_h = 0
 	$AnimatedSprite2D.play("swipe_" + get_direction_name())
-	attack_direction = look_direction 
+	attack_direction = look_direction
 	var slash = slash_scene.instantiate()
 	slash.position = attack_direction * 20.0
 	slash.rotation = Vector2().angle_to_point(-attack_direction)
@@ -47,7 +50,7 @@ func attack():
 	aud_player.stream = attack_sound
 	aud_player.play()
 	animation_lock = 0.2
-	
+
 func charged_attack():
 	data.state = STATES.ATTACKING
 	$AnimatedSprite2D.play("swipe_charge")
@@ -74,6 +77,7 @@ func pickup_money(value):
 	
 func pickup_heart(value):
 	data.health += value
+	data.health = clamp(data.health, 0, data.max_health)
 
 func _ready():
 	p_HUD.show()
@@ -90,6 +94,8 @@ func take_damage(dmg):
 		damage_lock = 0.5
 		animation_lock = dmg * 0.005
 		# to do: damage shader
+		$AnimatedSprite2D.material = damage_shader.duplicate()
+		$AnimatedSprite2D.material.set_shader_parameter("intensity", 0.5)
 		if data.health <= 0:
 			data.state = STATES.DEAD
 			# to do: play death animation & sound
@@ -100,10 +106,13 @@ func take_damage(dmg):
 	pass
 
 func _physics_process(delta):
-	animation_lock = max( animation_lock-delta, 0.0 )
-	damage_lock = max( damage_lock-delta, 0.0 )
+	animation_lock = max(animation_lock-delta, 0.0)
+	damage_lock = max(damage_lock-delta, 0.0)
 	
 	if animation_lock == 0.0 and data.state != STATES.DEAD:
+		if data.state == STATES.DAMAGED and max(damage_lock-delta, 0.0):
+			$AnimatedSprite2D.material = null
+		
 		if data.state != STATES.CHARGING:
 			data.state = STATES.IDLE
 		
@@ -126,19 +135,20 @@ func _physics_process(delta):
 		if Input.is_action_just_pressed("ui_accept"):
 			attack()
 			charge_start_time = Time.get_time_dict_from_system().second
-			data.states = STATES.CHARGING
+			data.state = STATES.CHARGING
 		
 		if Input.is_action_just_released("ui_accept"):
-			var charge_dur = Time.get_time_dict_from_system().second - charge_start_time
-			if charge_dur >= charge_time and data.state == STATES.CHARGING:
+			var ctime = Time.get_time_dict_from_system().second
+			var charge_duration = ctime - charge_start_time
+			if charge_duration >= charge_time and data.state == STATES.CHARGING:
 				charged_attack()
 			else:
 				data.state = STATES.IDLE
 	
-	
 	if Input.is_action_just_pressed("ui_cancel"):
 		menu_instance.show()
 		get_tree().paused = true
+
 
 
 func update_animation(direction):
